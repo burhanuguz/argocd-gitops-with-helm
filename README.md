@@ -22,7 +22,7 @@ It might be confusing at start but once you get the idea, your deployments and n
 
 
 The idea is, you will have a repository that holds all information about *namespaces*, as well as *applications* like in below. *namespace*, and *app* YAML's will be Application Manifest File that references Helm Chart with custom Chart values.
-``` nginx
+``` bash
 📦cluster-named-repository
 #┣ 📜any-cluster-resources.yaml     # Custom resource file to apply cluster-wide usually, can add as much as you need
  ┣ 📜cluster-namespaces.yaml        # ArgoCD Application Manifest File that references the namespaces folder
