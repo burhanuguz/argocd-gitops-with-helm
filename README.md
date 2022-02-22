@@ -12,6 +12,8 @@ In this repository you will find how to implement Git centric deployments to you
 - ArgoCD holds the information about the repo's it watches with Application Manifest file, like in [bgd-app](https://raw.githubusercontent.com/redhat-developer-demos/openshift-gitops-examples/main/components/applications/bgd-app.yaml) example.
 - We can add Application YAML files to the repo ArgoCD watches. You will create one Git Repo and add it to your ArgoCD manually only once, and then putting Application Manifest files to repo will create chained creation of **Namespace** and **Deployments**. The main idea is this in this explanation.
 - That's where we need Helm most. Because of creation of **namespaces** and **deployments** are expected to be the same mostly, I have created two Helm Chart for them.
+- Those Helm Chart's also include another Application Manifest YAML's for ArgoCD to watch the folders with namespace and application name.
+	- [new-namespace App Manifest YAML](https://github.com/burhanuguz/helm-chart-gitops/blob/master/charts/new-namespace/templates/ns-app.yaml) - [deploypackage App Manifest YAML](https://github.com/burhanuguz/helm-chart-gitops/blob/master/charts/deploypackage/templates/argocd-app.yaml)
 - ArgoCD Application Manifest File for creating **Namespace**'s and **Deployment**'s are the same and in the templates folder.
 	- [template.yaml](https://github.com/burhanuguz/test-cluster/blob/master/templates/template.yaml)
 - You can find the Helm Chart's used in this repo: https://github.com/burhanuguz/helm-chart-gitops/
