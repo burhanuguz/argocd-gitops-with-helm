@@ -79,7 +79,7 @@ git clone "${GITREPO}" && cd "${CLUSTERNAME}"
 # Create namespace yaml
 mkdir namespaces/${NAMESPACE}
 touch namespaces/${NAMESPACE}/.gitignore
-envsubst < templates/applicationManifestTemplate.yaml > namespaces/${NAMESPACE}.yaml
+envsubst < templates/template.yaml > namespaces/${NAMESPACE}.yaml
 
 git add --all; git commit -m "${NAMESPACE}"; git push origin master
 ```
@@ -117,7 +117,7 @@ git clone "${GITREPO}" && cd "${CLUSTERNAME}"
 # Create deployment yaml 
 mkdir namespaces/${NAMESPACE}/${APPLICATIONNAME}
 touch namespaces/${NAMESPACE}/${APPLICATIONNAME}/.gitignore
-envsubst < templates/applicationManifestTemplate.yaml > namespaces/${APPLICATIONNAME}.yaml
+envsubst < templates/template.yaml > namespaces/${NAMESPACE}/${APPLICATIONNAME}.yaml
 
 git add --all; git commit -m "${APPLICATIONNAME}"; git push origin master
 ```
